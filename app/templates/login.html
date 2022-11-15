@@ -1,46 +1,103 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="ja">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Ceregement</title>-->
+<!--    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">-->
+<!--</head>-->
+<!--<body>-->
+<!--<h1>Ceregement</h1>-->
+<!--<form method="post" action="#">-->
+<!--    <input type="text" id="test">-->
+<!--    <input type="submit" onclick="return testCheck()" value="送信">-->
+<!--    <p id="validate_msg" style="color: red;"></p>-->
+<!--</form>-->
+<!--<script>-->
+<!--    function testCheck() {-->
+<!--        var test = document.getElementById("test").value;-->
+<!--        if (test.length < 6) {-->
+<!--            var validate = "6文字以上入力してください。";-->
+<!--            document.getElementById("validate_msg").innerHTML = validate;-->
+<!--            return false;-->
+<!--        }-->
+<!--    }-->
+<!--    function LoginCheck() {-->
+<!--        var mailAddress = document.getElementById("MailAddress").value;-->
+
+<!--        if (mailAddress.length > 200) {-->
+<!--            var err_msg = "200文字以下で入力してください";-->
+<!--            document.getElementById("err_msg").innerHTML = err_msg;-->
+<!--            return false;-->
+<!--        }-->
+<!--    }-->
+<!--</script>-->
+<!--<form method="post" action="#">-->
+<!--    <p>ID(メールアドレス)　<input type="text" id="MailAddress" maxlength="200"></p>-->
+<!--    <input type="submit" onclick="return LoginCheck()" >-->
+<!--</form>-->
+
+<!--<p>パスワード　<input type="text" name="password" maxlength="16" minlength="8"></p>-->
+<!--<form name="login_form">-->
+<!--    <div class="login_form_top">-->
+<!--        <h1>ログイン画面</h1>-->
+<!--    </div>-->
+<!--</form>-->
+<!--</body>-->
+<!--</html>-->
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Ceregement</title>
     <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style type="text/css">
+        .login-form {
+            width: 340px;
+            margin: 50px auto;
+        }
+        .login-form form {
+            margin-bottom: 15px;
+            background: #f7f7f7;
+            box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+            padding: 30px;
+        }
+        .login-form h2 {
+            margin: 0 0 15px;
+        }
+        .form-control, .btn {
+            min-height: 38px;
+            border-radius: 2px;
+        }
+        .btn {
+            font-size: 15px;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
-<h1>Ceregement</h1>
-<form method="post" action="#">
-    <input type="text" id="test">
-    <input type="submit" onclick="return testCheck()" value="送信">
-    <p id="validate_msg" style="color: red;"></p>
-</form>
-<script>
-    function testCheck() {
-        var test = document.getElementById("test").value;
-        if (test.length < 6) {
-            var validate = "6文字以上入力してください。";
-            document.getElementById("validate_msg").innerHTML = validate;
-            return false;
-        }
-    }
-    function LoginCheck() {
-        var mailAddress = document.getElementById("MailAddress").value;
+<div class="login-form">
+    <form action="" method="post">
+        <h2 class="text-center">Ceregement</h2>
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="ID(メールアドレス)" required="required" name="mailaddress">
+        </div>
+        <div class="form-group">
+            <input type="password" class="form-control" placeholder="パスワード" required="required" name="password">
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-block">ログイン</button>
+        </div>
+        <div class="form-group">
+            <button type="button" class="btn btn-primary btn-block">新規登録</button>
+        </div>
 
-        if (mailAddress.length > 200) {
-            var err_msg = "200文字以下で入力してください";
-            document.getElementById("err_msg").innerHTML = err_msg;
-            return false;
-        }
-    }
-</script>
-<form method="post" action="#">
-    <p>ID(メールアドレス)　<input type="text" id="MailAddress" maxlength="200"></p>
-    <input type="submit" onclick="return LoginCheck()" >
-</form>
-
-<p>パスワード　<input type="text" name="password" maxlength="16" minlength="8"></p>
-<form name="login_form">
-    <div class="login_form_top">
-        <h1>ログイン画面</h1>
-    </div>
-</form>
+    </form>
+</div>
 </body>
 </html>
